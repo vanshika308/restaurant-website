@@ -1,0 +1,22 @@
+.summary{
+    position: absolute; /* Set .summary to absolute positioning */
+    top: 40%;
+    left: 25%;
+    width: 50%;
+    background-color: rgb(41, 43, 42);
+    padding: 20px;
+}
+h1{
+    position:static;
+    margin: auto;
+    width: 70%;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+p{
+    position: relative;
+    margin: auto;
+    width: 90%;
+    text-align: center; 
+}

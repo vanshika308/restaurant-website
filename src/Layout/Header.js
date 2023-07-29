@@ -1,6 +1,8 @@
  
 import './Header.css'; 
 import Cart from '../Cart/Cart';
+import Summary from './Summary';
+
 const Header=()=>{
     return (
         <div className='header'>
@@ -8,8 +10,10 @@ const Header=()=>{
                 <h1>ReactEats</h1>
                 <Cart className='cart'/>
            </div>
-             <img className='banner' src='banner.png' alt='banner'></img>
-           
+           <div className='header-summary'>
+           <img className='banner' src='banner.jpg' alt='banner'></img>
+             <Summary></Summary>
+           </div>
         </div>
     )
 }
