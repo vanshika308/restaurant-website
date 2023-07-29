@@ -1,0 +1,34 @@
+img{
+    display: absolute;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 23px;
+    height: 30px;
+    width: 30px;
+}
+p{
+    color: aliceblue;
+    margin-left: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.cart{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(60, 60, 60);
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 250px;
+    border: 0.005px solid rgb(165, 151, 151);
+    border-radius: 30px;
+}
+h3{
+    background-color: rgb(137, 151, 146);
+    color: black;
+    width: 60px;
+    height: 35px;
+    padding-left: 20px;
+    border: 0.05px solid rgb(2, 2, 2);
+    border-radius: 15px;
+}
