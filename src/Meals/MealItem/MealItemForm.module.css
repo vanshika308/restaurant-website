@@ -1,0 +1,10 @@
+input{
+    width: 60px;
+    height: 40px;
+    border: 1.5px solid rgb(175, 171, 171);
+    border-radius: 10px;
+}
+label{
+    padding-right: 10px;
+    font-size: 18px;
+}
