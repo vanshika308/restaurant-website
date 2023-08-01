@@ -1,20 +1,20 @@
- 
-import './Header.css'; 
-import Cart from '../Cart/Cart';
-import Summary from './Summary';
+import React from 'react'; 
+import classes from './Header.module.css';
+import Summary from '../Meals/Summary';
+import HeaderCartButton from './HeaderCartButton';
 
-const Header=()=>{
+const Header=(props)=>{
     return (
-        <div className='header'>
-           <div className='header-item'>  
-                <h1>ReactEats</h1>
-                <Cart className='cart'/>
-           </div>
-           <div className='header-summary'>
-           <img className='banner' src='banner.jpg' alt='banner'></img>
-             <Summary></Summary>
-           </div>
-        </div>
+    <React.Fragment>  
+      <header className={classes.header}>
+        <h1>ReactMeals</h1>
+        <HeaderCartButton></HeaderCartButton>
+      </header>
+      <div className={classes['main-image']}>
+        <img  src='banner.png' alt='banner'></img>
+      </div>
+      <Summary></Summary>
+        </React.Fragment>
     )
 }
 
