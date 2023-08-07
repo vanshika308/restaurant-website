@@ -17,32 +17,52 @@ const Cart = (props) => {
   }
 
   let totalAmount = 0;
-  let totalQuantity = 0;
   for (const item of combinedItems) {
     totalAmount += item.price * item.quantity;
-    totalQuantity += item.quantity;
   }
+
+  const plusHandler = (item) => {
+    cartcntx.addItem({ ...item, quantity: 1 });
+  };
+
+  const minusHandler = (item) => {
+    if (item.quantity === 1) {
+      cartcntx.removeItem(item.id); // Remove the item from the cart if the quantity is 1
+    } else {
+      cartcntx.addItem({ ...item, quantity: -1 }); // Decrease the quantity of the item in the cart by 1
+    }
+  };
 
   const cartItems = (
     <ul className={classes['cart-items']}>
       {combinedItems.map((item) => (
         <li key={`${item.id}_${item.name}`}>
-          Name: {item.name} Price: {item.price} Quantity: {item.quantity}
+          <div>
+              <h3>{item.name}</h3> 
+          <div className={classes.values}>
+            <div className={classes.amount}>
+            <h4>${item.price}</h4>
+            <h3>X{item.quantity}</h3>
+            </div>
+            <div className={classes.button}>
+            <button onClick={() => plusHandler(item)}>+</button>
+            <button onClick={() => minusHandler(item)}>-</button>
+            </div>
+            </div>
+          </div>
+          <hr/>
         </li>
+       
       ))}
     </ul>
   );
 
   return (
-    <Modal>
+    <Modal onClose={props.onClose}>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>{totalAmount.toFixed(2)}</span> {/* Display the total amount */}
-      </div>
-      <div className={classes.total}>
-        <span>Total Quantity</span>
-        <span>{totalQuantity}</span> {/* Display the total quantity */}
       </div>
       <div className={classes.actions}>
         <button className={classes['button--alt']} onClick={props.onClose}>
